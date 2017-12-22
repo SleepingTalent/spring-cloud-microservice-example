@@ -1,0 +1,36 @@
+info:
+  app:
+    name: config-api
+    description: Configuration Service
+    version: @project.version@
+
+server:
+  port: 1111
+  use-forward-headers: true
+  context-path: /config-api
+
+endpoints:
+  restart:
+    enabled: true
+
+spring:
+  application:
+    name: config-api
+  profiles:
+    active: local,native
+  thymeleaf:
+    enabled: false
+
+---
+
+spring:
+  profiles: local
+  cloud:
+    config:
+      server:
+        native:
+         searchLocations: classpath:config
+logging:
+  config: classpath:logback.xml
+
+
