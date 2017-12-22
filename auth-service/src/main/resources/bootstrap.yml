@@ -1,0 +1,27 @@
+info:
+  app:
+    name: auth-service
+    description: Auth Service
+    version: @project.version@
+
+server:
+  port: 1112
+  context-path: /auth
+
+spring:
+  application:
+    name: auth-service
+  profiles:
+    active: local
+
+---
+
+spring:
+  profiles: local
+  cloud:
+    config:
+      uri: http://localhost:1111/config-api/
+logging:
+  config: classpath:logback.xml
+
+---

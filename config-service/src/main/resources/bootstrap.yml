@@ -1,13 +1,13 @@
 info:
   app:
-    name: config-api
+    name: config-service
     description: Configuration Service
     version: @project.version@
 
 server:
   port: 1111
   use-forward-headers: true
-  context-path: /config-api
+  context-path: /config-service
 
 endpoints:
   restart:
@@ -15,7 +15,7 @@ endpoints:
 
 spring:
   application:
-    name: config-api
+    name: config-service
   profiles:
     active: local,native
   thymeleaf:
