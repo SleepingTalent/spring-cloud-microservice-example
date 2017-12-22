@@ -14,8 +14,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>eureka-discovery-service</module>
-        <module>config-api</module>
+        <module>eureka-service</module>
+        <module>config-service</module>
     </modules>
 
     <properties>
