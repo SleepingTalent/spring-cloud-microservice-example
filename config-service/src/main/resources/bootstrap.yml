@@ -5,7 +5,7 @@ info:
     version: @project.version@
 
 server:
-  port: 1111
+  port: 1001
   use-forward-headers: true
   context-path: /config-service
 
@@ -32,5 +32,17 @@ spring:
          searchLocations: classpath:config
 logging:
   config: classpath:logback.xml
+
+# Discovery Server Access
+#  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
+#  2. Define URL of registration server (defaultZone)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    statusPageUrlPath: /config-service/info
+    healthCheckUrlPath: /config-service/health
 
 

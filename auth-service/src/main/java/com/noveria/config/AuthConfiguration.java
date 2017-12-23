@@ -2,6 +2,7 @@ package com.noveria.config;
 
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -16,6 +17,7 @@ import org.springframework.web.filter.CorsFilter;
 @Configuration
 @EnableAuthorizationServer
 @EnableResourceServer
+@EnableDiscoveryClient
 public class AuthConfiguration extends ResourceServerConfigurerAdapter {
 
     @Override
