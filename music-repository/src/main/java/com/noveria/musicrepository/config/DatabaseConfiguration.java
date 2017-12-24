@@ -1,0 +1,13 @@
+package com.noveria.musicrepository.config;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@Configuration
+@EntityScan("com.noveria.musicrepository.model.domain")
+@EnableJpaRepositories("com.noveria.musicrepository.model.repositories")
+@EnableTransactionManagement
+public class DatabaseConfiguration {
+}

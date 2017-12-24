@@ -17,6 +17,7 @@
         <module>eureka-service</module>
         <module>config-service</module>
         <module>auth-service</module>
+        <module>music-repository</module>
     </modules>
 
     <properties>

@@ -1,0 +1,16 @@
+info:
+  app:
+    name: music-repository
+    description: Music Repository Test
+    version: 1.0.0
+
+server:
+  port: 2000
+  context-path: /music-repository
+
+spring:
+  application:
+    name: music-repository
+
+logging:
+  config: classpath:logback-test.xml

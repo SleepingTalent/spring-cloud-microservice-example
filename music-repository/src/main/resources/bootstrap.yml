@@ -1,0 +1,42 @@
+info:
+  app:
+    name: music-repository
+    description: Music Repository Api
+    version: @project.version@
+
+server:
+  port: 2000
+  context-path: /music-repository
+
+spring:
+  application:
+    name: music-repository
+  profiles:
+    active: local
+
+---
+
+spring:
+  profiles: local
+  cloud:
+    config:
+      uri: http://localhost:1001/config-api/
+logging:
+  config: classpath:logback.xml
+
+
+# Discovery Server Access
+#  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
+#  2. Define URL of registration server (defaultZone)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    statusPageUrlPath: /music-repository/info
+    healthCheckUrlPath: /music-repository/health
+
+---
+
+
