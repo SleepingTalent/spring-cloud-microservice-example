@@ -20,7 +20,8 @@ spring:
   profiles: local
   cloud:
     config:
-      uri: http://localhost:1001/config-api/
+      uri: http://localhost:1001/config-service/
+      fail-fast: true
 logging:
   config: classpath:logback.xml
 
