@@ -39,8 +39,7 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(regex("/musicrepository/.*"))
+                .apis(RequestHandlerSelectors.basePackage("com.noveria.musicrepository.controller"))
                 .build()
                 .apiInfo(apiInfo())
                 .securitySchemes(newArrayList(oauth()));
@@ -78,11 +77,11 @@ public class SwaggerConfiguration {
 
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfo(
-                "Security Admin Service API",
-                "API Creates/Finds/Assigns Subjects, Roles and Permissions",
+                "Music Repository",
+                "API Creates/Finds Music Albums and Artists",
                 "1.0.0",
                 "Terms of service",
-                "emtdevelopment@babcockinternational.com",
+                "test@test.com",
                 "License of API",
                 "API license URL");
         return apiInfo;
