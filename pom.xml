@@ -18,6 +18,7 @@
         <module>config-service</module>
         <module>auth-service</module>
         <module>music-repository</module>
+        <module>integration-test</module>
     </modules>
 
     <properties>
