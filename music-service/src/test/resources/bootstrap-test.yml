@@ -1,0 +1,16 @@
+info:
+  app:
+    name: music-service
+    description: Music Service Test
+    version: 1.0.0
+
+server:
+  port: 2100
+  context-path: /music-service
+
+spring:
+  application:
+    name: music-service
+
+logging:
+  config: classpath:logback-test.xml
