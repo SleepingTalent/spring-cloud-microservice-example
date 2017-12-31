@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.noveria.musicservice.client")
 @ComponentScan("com.noveria.musicservice")
 @Import({SecurityConfiguration.class, SwaggerConfiguration.class})
 public class CloudConfiguration {

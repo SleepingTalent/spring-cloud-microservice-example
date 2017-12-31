@@ -23,10 +23,17 @@ public class WaitForHelper {
     @Value("${music.repo.url}")
     String musicRepoUrl;
 
+    @Value("${music.service.url}")
+    String musicServiceUrl;
+
     private static boolean serviceUnavailable = false;
 
     public void waitForMusicRepository() throws InterruptedException {
         waitForService(musicRepoUrl,"music-repository");
+    }
+
+    public void waitForMusicService() throws InterruptedException {
+        waitForService(musicRepoUrl,"music-service");
     }
 
     private void waitForService(String baseUrl, String name) throws InterruptedException {
