@@ -1,6 +1,6 @@
 package com.noveria.musicservice.service;
 
-import com.noveria.musicservice.client.MusicRepository;
+import com.noveria.musicservice.client.MusicRepositoryClient;
 import com.noveria.musicservice.controller.request.AlbumRequest;
 import com.noveria.musicservice.controller.request.ArtistRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.List;
 public class MusicService {
 
     @Autowired
-    MusicRepository musicRepository;
+    MusicRepositoryClient musicRepository;
 
     public List<AlbumRequest> findAllAlbums() {
         return musicRepository.findAllAlbums();

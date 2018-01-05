@@ -15,7 +15,7 @@
     <properties>
         <java.version>1.8</java.version>
         <skip.pit.test>false</skip.pit.test>
-        <pit.mutation.threshold>47</pit.mutation.threshold>
+        <pit.mutation.threshold>43</pit.mutation.threshold>
     </properties>
 
     <dependencies>
@@ -58,7 +58,7 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
         </dependency>
 
         <dependency>

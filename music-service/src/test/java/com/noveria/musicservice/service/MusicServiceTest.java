@@ -1,6 +1,6 @@
 package com.noveria.musicservice.service;
 
-import com.noveria.musicservice.client.MusicRepository;
+import com.noveria.musicservice.client.MusicRepositoryClient;
 import com.noveria.musicservice.controller.request.AlbumRequest;
 import com.noveria.musicservice.controller.request.ArtistRequest;
 import org.junit.Rule;
@@ -28,7 +28,7 @@ public class MusicServiceTest {
     private MusicService musicService;
 
     @MockBean
-    private MusicRepository musicRepository;
+    private MusicRepositoryClient musicRepository;
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
