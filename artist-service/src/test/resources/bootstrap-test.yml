@@ -1,0 +1,16 @@
+info:
+  app:
+    name: artist-service
+    description: Artist Service Test
+    version: 1.0.0
+
+server:
+  port: 2100
+  context-path: /artist-service
+
+spring:
+  application:
+    name: artist-service
+
+logging:
+  config: classpath:logback-test.xml
