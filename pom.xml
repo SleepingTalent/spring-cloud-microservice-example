@@ -20,6 +20,7 @@
         <module>music-repository</module>
         <module>music-service</module>
         <module>artist-service</module>
+        <module>zuul-api-gateway</module>
         <module>integration-test</module>
     </modules>
 

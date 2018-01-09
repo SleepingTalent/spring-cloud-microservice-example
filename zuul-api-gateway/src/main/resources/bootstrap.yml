@@ -1,0 +1,39 @@
+info:
+  app:
+    name: zuul-api-gateway
+    description: Zuul API Gateway
+    version: @project.version@
+
+server:
+  port: 1003
+
+spring:
+  application:
+    name: zuul-api-gateway
+  profiles:
+    active: local
+
+---
+
+spring:
+  profiles: local
+  cloud:
+    config:
+      uri: http://localhost:1001/config-service/
+      fail-fast: true
+logging:
+  config: classpath:logback.xml
+
+# Discovery Server Access
+#  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
+#  2. Define URL of registration server (defaultZone)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+
+---
