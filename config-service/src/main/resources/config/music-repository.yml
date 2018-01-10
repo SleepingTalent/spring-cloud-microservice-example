@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: music-repository
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  show-sql: true
+
+server:
+  contextPath: /music-repository
+
+management:
+  security:
+    enabled: false
+
+security:
+  user:
+    name: admin
+    password: password
+  oauth2:
+    client:
+      client-id: devApp
+      client-secret: devAppSecret
+      access-token-uri: http://localhost:1002/auth/oauth/token
+      grant-type: client_credentials
+    resource.user-info-uri: http://localhost:1002/auth/user

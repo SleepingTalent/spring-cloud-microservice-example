@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: auth-service
+
+server:
+  contextPath: /auth
+
+management:
+  security:
+    enabled: false
+
+security:
+  user:
+    name: admin
+    password: password
+  oauth2:
+    client:
+      client-id: devApp
+      client-secret: devAppSecret
+      access-token-uri: http://localhost:1002/auth/oauth/token
+      authorized-grant-types: authorization_code,refresh_token,password,client_credentials
+      scope: openid
+    resource.user-info-uri: http://localhost:1002/auth/user

@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: music-service
+
+server:
+  contextPath: /music-service
+
+management:
+  security:
+    enabled: false
+
+security:
+  user:
+    name: admin
+    password: password
+  oauth2:
+    client:
+      client-id: devApp
+      client-secret: devAppSecret
+      access-token-uri: http://localhost:1002/auth/oauth/token
+      grant-type: client_credentials
+    resource.user-info-uri: http://localhost:1002/auth/user
+  auth:
+    id: devOAuth
+    client:
+     id: devApp
+     secret: devAppSecret
+    grant:
+      type: client_credentials
+    token:
+      url: http://localhost:1002/auth/oauth/token
+
+music:
+  repository:
+    url: http://music-repository/music-repository

@@ -12,6 +12,12 @@ zuul:
       serviceId: MUSIC-SERVICE
       #stripPrefix: false
 
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
 
 security:
   oauth2:
@@ -27,7 +33,7 @@ security:
     client:
       id: devApp
       secret: devAppSecret
-  grant:
-    type: client_credentials
-  token:
-    url: http://localhost:1002/auth/oauth/token
+    grant:
+      type: client_credentials
+    token:
+      url: http://localhost:1002/auth/oauth/token
