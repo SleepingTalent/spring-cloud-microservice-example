@@ -14,3 +14,7 @@ spring:
 
 logging:
   config: classpath:logback-test.xml
+
+music:
+  repository:
+    url: http://test-music-repository/music-repository
