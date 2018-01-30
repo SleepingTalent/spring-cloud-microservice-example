@@ -24,6 +24,7 @@ cd..
 
 TIMEOUT /t 30
 
+cd music-service
 start "music-service-1" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2100'
 REM start "music-service-2" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2101'
 REM start "music-service-3" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2102'
@@ -31,24 +32,21 @@ cd..
 
 TIMEOUT /t 10
 
+cd artist-service
 start "artist-service-1" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2200'
-REM start "music-service-2" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2201'
-REM start "music-service-3" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2202'
+REM start "artist-service-2" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2201'
+REM start "artist-service-3" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2202'
 cd..
 
 TIMEOUT /t 10
 
+cd zuul-api-gateway
 start "zuul-api-gateway" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=1003'
 cd..
 
-TIMEOUT /t 10
+REM TIMEOUT /t 10
 
-cd music-web
-start "music-web-1" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2300'
+REM cd music-web
+REM start "music-web-1" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2300'
 REM start "music-web-2" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2301'
-cd..
-
-cd music-web
-start "artist-web-1" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2400'
-REM start "artist-web-2" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=2401'
-cd..
+REM cd..
