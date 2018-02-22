@@ -2,7 +2,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.3.RELEASE</version>
+        <version>1.4.7.RELEASE</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -14,6 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>admin-dashboard</module>
         <module>eureka-service</module>
         <module>config-service</module>
         <module>auth-service</module>
@@ -28,17 +29,5 @@
         <spring-cloud.version>Brixton.SR7</spring-cloud.version>
         <java.version>1.8</java.version>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>

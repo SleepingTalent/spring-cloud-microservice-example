@@ -30,6 +30,12 @@ spring:
       server:
         native:
          searchLocations: classpath:config
+  boot:
+    admin:
+      url: http://localhost:3000/admin-dashboard
+      client:
+        management-url: http://localhost:1001/config-service
+        service-url: http://localhost:1001/config-service
 logging:
   config: classpath:logback.xml
 

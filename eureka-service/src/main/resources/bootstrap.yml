@@ -1,3 +1,9 @@
+info:
+  app:
+    name: eureka-server
+    description: Discovery Service
+#    version: @project.version@
+
 # Configure this Discovery Server
 eureka:
   instance:
@@ -5,11 +11,23 @@ eureka:
   client:  # Not a client, don't register with yourself
     registerWithEureka: false
     fetchRegistry: false
-     
+
+management:
+  security:
+    enabled: false
+
 server:
   port: 1000   # HTTP (Tomcat) port
 
 # Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
 spring:
+  application:
+    name: eureka-server
+  boot:
+    admin:
+      url: http://localhost:3000/admin-dashboard
+      client:
+        management-url: http://localhost:1000
+        service-url: http://localhost:1000
   thymeleaf:
     enabled: false     # Disable Thymeleaf 

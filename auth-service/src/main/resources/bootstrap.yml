@@ -22,6 +22,12 @@ spring:
     config:
       uri: http://localhost:1001/config-service/
       fail-fast: true
+  boot:
+    admin:
+      url: http://localhost:3000/admin-dashboard
+      client:
+        management-url: http://localhost:1002/auth
+        service-url: http://localhost:1002/auth
 logging:
   config: classpath:logback.xml
 

@@ -1,5 +1,11 @@
 MODE 1000,1000
 
+cd admin-dashboard
+start "admin-dashboard" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=3000'
+cd..
+
+TIMEOUT /t 30
+
 cd eureka-service
 start "eureka-service" mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=1000'
 cd..
