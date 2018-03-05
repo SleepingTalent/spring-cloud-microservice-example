@@ -13,7 +13,7 @@ public class SecurityConfiguration extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.anonymous().and()
-                .authorizeRequests().antMatchers( "/info","/routes").permitAll()
+                .authorizeRequests().antMatchers( "/info","/health","/health/","/routes").permitAll()
                 .anyRequest().authenticated();
     }
 
