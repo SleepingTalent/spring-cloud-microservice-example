@@ -25,8 +25,8 @@ spring:
     admin:
       url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:1003/
-        service-url: http://localhost:1003/
+        management-url: http://localhost:${server.port}/
+        service-url: http://localhost:${server.port}/
 logging:
   config: classpath:logback.xml
 

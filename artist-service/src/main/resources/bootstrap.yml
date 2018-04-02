@@ -26,8 +26,8 @@ spring:
     admin:
       url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:2200/artist-service
-        service-url: http://localhost:2200/artist-service
+        management-url: http://localhost:${server.port}/artist-service
+        service-url: http://localhost:${server.port}/artist-service
 logging:
   config: classpath:logback.xml
 

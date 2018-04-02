@@ -22,6 +22,12 @@ cd auth-service
 start "auth-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=1002"
 cd..
 
+TIMEOUT /t 10
+
+cd zipkin-service
+start "zipkin-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=1004"
+cd..
+
 TIMEOUT /t 30
 
 cd music-repository

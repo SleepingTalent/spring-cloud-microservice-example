@@ -26,8 +26,8 @@ spring:
     admin:
       url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:2000/music-repository
-        service-url: http://localhost:2000/music-repository
+        management-url: http://localhost:${server.port}/music-repository
+        service-url: http://localhost:${server.port}/music-repository
 logging:
   config: classpath:logback.xml
 

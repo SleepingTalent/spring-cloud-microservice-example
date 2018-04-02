@@ -27,7 +27,7 @@ spring:
     admin:
       url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:1000
-        service-url: http://localhost:1000
+        management-url: http://localhost:${server.port}
+        service-url: http://localhost:${server.port}
   thymeleaf:
     enabled: false     # Disable Thymeleaf 
