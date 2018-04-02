@@ -12,6 +12,11 @@ spring:
     name: zuul-api-gateway
   profiles:
     active: local
+  sleuth:
+    sampler:
+      percentage: 1.0
+    web:
+      skipPattern: (^cleanup.*)
 
 ---
 
