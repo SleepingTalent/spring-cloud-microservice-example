@@ -5,7 +5,6 @@ import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.appinfo.LeaseInfo;
 import com.netflix.discovery.shared.Application;
-import com.vebnet.reflex.featuretoggle.api.mock.MockEurekaServer;
 import org.junit.Rule;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
