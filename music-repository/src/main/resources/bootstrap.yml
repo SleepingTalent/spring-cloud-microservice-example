@@ -13,6 +13,11 @@ spring:
     name: music-repository
   profiles:
     active: local
+  sleuth:
+    sampler:
+      percentage: 1.0
+    web:
+      skipPattern: (^cleanup.*)
 
 ---
 
@@ -30,6 +35,8 @@ spring:
         service-url: http://localhost:${server.port}/music-repository
 logging:
   config: classpath:logback.xml
+
+
 
 
 # Discovery Server Access

@@ -13,6 +13,11 @@ spring:
     name: music-service
   profiles:
     active: local
+  sleuth:
+    sampler:
+      percentage: 1.0
+    web:
+      skipPattern: (^cleanup.*)
 
 ---
 

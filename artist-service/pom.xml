@@ -60,6 +60,11 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
 
@@ -67,6 +72,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -141,10 +152,7 @@
                                 <param>com.noveria.*</param>
                             </targetTests>
                             <excludedClasses>
-                                <param>com.noveria.artistservice.config.CloudConfiguration</param>
-                                <param>com.noveria.musicservice.config.DatabaseConfiguration</param>
-                                <param>com.noveria.artistservice.config.SwaggerConfiguration</param>
-                                <param>com.noveria.artistservice.config.SecurityConfiguration</param>
+                                <param>com.noveria.artistservice.config.*</param>
                             </excludedClasses>
                             <mutationThreshold>${pit.mutation.threshold}</mutationThreshold>
                             <timestampedReports>false</timestampedReports>
