@@ -1,9 +1,8 @@
-package com.noveria.musicservice.service;
+package com.noveria.artistservice.service;
 
 import com.noveria.artistservice.client.MusicRepositoryClient;
 import com.noveria.artistservice.controller.request.AlbumRequest;
 import com.noveria.artistservice.controller.request.ArtistRequest;
-import com.noveria.artistservice.service.ArtistService;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

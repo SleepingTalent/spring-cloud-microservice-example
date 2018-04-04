@@ -18,6 +18,14 @@ spring:
     web:
       skipPattern: (^cleanup.*)
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
 ---
 
 spring:

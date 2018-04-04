@@ -15,7 +15,7 @@ public class ArtistService {
     MusicRepositoryClient musicRepository;
 
     public List<AlbumRequest> findAllAlbums() {
-        return musicRepository.findAllAlbums();
+            return musicRepository.findAllAlbums();
     }
 
     public List<ArtistRequest> findAllArtists() {

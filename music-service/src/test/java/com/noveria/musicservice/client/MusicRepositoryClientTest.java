@@ -1,14 +1,12 @@
 package com.noveria.musicservice.client;
 
 import com.noveria.musicservice.config.ConfigurationForTest;
-import com.noveria.musicservice.controller.MusicServiceController;
 import com.noveria.musicservice.controller.request.AlbumRequest;
 import com.noveria.musicservice.controller.request.ArtistRequest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;

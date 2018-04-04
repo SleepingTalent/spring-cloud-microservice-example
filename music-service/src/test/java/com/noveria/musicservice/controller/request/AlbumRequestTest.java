@@ -1,6 +1,5 @@
 package com.noveria.musicservice.controller.request;
 
-import com.noveria.musicservice.controller.request.AlbumRequest;
 import org.junit.Before;
 import org.junit.Test;
 

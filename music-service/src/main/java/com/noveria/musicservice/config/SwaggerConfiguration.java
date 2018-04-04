@@ -39,7 +39,7 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.noveria.musicservice.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.noveria.artistservice.controller"))
                 .build()
                 .apiInfo(apiInfo())
                 .securitySchemes(newArrayList(oauth()));

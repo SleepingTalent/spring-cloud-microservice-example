@@ -16,10 +16,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ZipkinConfiguration {
 
-//    @Bean
-//    public AlwaysSampler defaultSampler() {
-//        return new AlwaysSampler();
-//    }
+    @Bean
+    public AlwaysSampler defaultSampler() {
+        return new AlwaysSampler();
+    }
 //    @Autowired
 //    private EurekaClient eurekaClient;
 //

@@ -1,4 +1,4 @@
-package com.noveria.musicservice.controller.request;
+package com.noveria.artistservice.controller.request;
 
 import com.noveria.artistservice.controller.request.ArtistRequest;
 import org.junit.Before;

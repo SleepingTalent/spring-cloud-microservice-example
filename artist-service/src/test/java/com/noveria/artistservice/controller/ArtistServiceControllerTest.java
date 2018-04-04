@@ -1,4 +1,4 @@
-package com.noveria.musicservice.controller;
+package com.noveria.artistservice.controller;
 
 import com.noveria.artistservice.controller.ArtistServiceController;
 import com.noveria.artistservice.controller.request.AlbumRequest;

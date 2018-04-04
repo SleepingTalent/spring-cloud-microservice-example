@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @EnableDiscoveryClient
 @ComponentScan("com.noveria.musicrepository")
-@Import({SecurityConfiguration.class,DatabaseConfiguration.class, SwaggerConfiguration.class})
+@Import({SecurityConfiguration.class,DatabaseConfiguration.class, SwaggerConfiguration.class,ZipkinConfiguration.class})
 public class CloudConfiguration {
 }

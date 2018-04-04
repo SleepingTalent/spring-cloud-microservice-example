@@ -19,6 +19,13 @@ spring:
     web:
       skipPattern: (^cleanup.*)
 
+feign:
+  oauth2:
+    enabled: true
+  hystrix:
+    enabled: false
+
+
 ---
 
 spring:
