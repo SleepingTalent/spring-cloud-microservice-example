@@ -17,6 +17,8 @@ spring:
       percentage: 1.0
     web:
       skipPattern: (^cleanup.*)
+  zipkin:
+    baseUrl: http://localhost:1004/
 
 hystrix:
   command:
