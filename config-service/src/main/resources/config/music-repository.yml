@@ -22,6 +22,6 @@ security:
     client:
       client-id: devApp
       client-secret: devAppSecret
-      access-token-uri: http://localhost:1002/auth/oauth/token
+      access-token-uri: http://localhost:3300/auth/oauth/token
       grant-type: client_credentials
-    resource.user-info-uri: http://localhost:1002/auth/user
+    resource.user-info-uri: http://localhost:3300/auth/user

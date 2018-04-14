@@ -17,9 +17,9 @@ security:
     client:
       client-id: devApp
       client-secret: devAppSecret
-      access-token-uri: http://localhost:1002/auth/oauth/token
+      access-token-uri: http://localhost:3300/auth/oauth/token
       grant-type: client_credentials
-    resource.user-info-uri: http://localhost:1002/auth/user
+    resource.user-info-uri: http://localhost:3300/auth/user
   auth:
     id: devOAuth
     client:
@@ -28,7 +28,7 @@ security:
     grant:
       type: client_credentials
     token:
-      url: http://localhost:1002/auth/oauth/token
+      url: http://localhost:3300/auth/oauth/token
 
 music:
   repository:

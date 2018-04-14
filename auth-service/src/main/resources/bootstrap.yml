@@ -5,7 +5,7 @@ info:
     version: @project.version@
 
 server:
-  port: 1002
+  port: 3300
   context-path: /auth
 
 spring:
@@ -20,7 +20,7 @@ spring:
   profiles: local
   cloud:
     config:
-      uri: http://localhost:1001/config-service/
+      uri: http://localhost:3200/config-service/
       fail-fast: true
   boot:
     admin:
@@ -37,7 +37,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1000/eureka/
+      defaultZone: http://localhost:3100/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
     statusPageUrlPath: /auth/info

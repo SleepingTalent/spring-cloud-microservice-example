@@ -19,7 +19,7 @@ spring:
     web:
       skipPattern: (^cleanup.*)
   zipkin:
-    baseUrl: http://localhost:1004/
+    baseUrl: http://localhost:3400/
 
 feign:
   oauth2:
@@ -34,7 +34,7 @@ spring:
   profiles: local
   cloud:
     config:
-      uri: http://localhost:1001/config-service/
+      uri: http://localhost:3200/config-service/
       fail-fast: true
   boot:
     admin:
@@ -52,7 +52,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1000/eureka/
+      defaultZone: http://localhost:3100/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
     statusPageUrlPath: /artist-service/info

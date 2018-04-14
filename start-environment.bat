@@ -7,25 +7,25 @@ cd..
 TIMEOUT /t 30
 
 cd eureka-service
-start "eureka-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=1000"
+start "eureka-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=3100"
 cd..
 
 TIMEOUT /t 30
 
 cd config-service
-start "config-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=1001"
+start "config-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=3200"
 cd..
 
 TIMEOUT /t 30
 
 cd auth-service
-start "auth-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=1002"
+start "auth-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=3300"
 cd..
 
 TIMEOUT /t 10
 
 cd zipkin-service
-start "zipkin-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=1004"
+start "zipkin-service" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=3400"
 cd..
 
 TIMEOUT /t 30
@@ -53,7 +53,7 @@ cd..
 TIMEOUT /t 10
 
 cd zuul-api-gateway
-start "zuul-api-gateway" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=1003"
+start "zuul-api-gateway" mvn spring-boot:run -Drun.jvmArguments="-Xmx128m -Dserver.port=3500"
 cd..
 
 REM TIMEOUT /t 10

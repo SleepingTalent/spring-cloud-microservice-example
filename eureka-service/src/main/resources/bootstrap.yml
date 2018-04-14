@@ -17,7 +17,7 @@ management:
     enabled: false
 
 server:
-  port: 1000   # HTTP (Tomcat) port
+  port: 3100   # HTTP (Tomcat) port
 
 # Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
 spring:
