@@ -6,6 +6,7 @@ import com.noveria.integration.asserter.WaitForService;
 import com.noveria.integration.response.musicrepo.AlbumResponse;
 import com.noveria.integration.response.musicrepo.ArtistResponse;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -53,6 +54,7 @@ public class ZuulGatewayIT {
     }
 
     @Test
+    @Ignore
     public void zuulRoutesUrl_returns_expected_routes() {
 
         ResponseEntity<String> routes =
