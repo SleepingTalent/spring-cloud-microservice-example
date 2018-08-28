@@ -9,7 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.swing.text.html.Option;
+
+import java.util.Optional;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 @SpringBootTest(classes = Artist.class)
 public class AlbumRepositoryTest extends BaseRepositoryTest {
@@ -34,7 +40,9 @@ public class AlbumRepositoryTest extends BaseRepositoryTest {
 
     @Test
     public void getAlbumById() {
-        assertEquals("Be Here Now", albumRepository.findOne(album.getId()).getName());
+        Optional<Album> foundAlbum = albumRepository.findById(album.getId());
+        assertTrue(foundAlbum.isPresent());
+        assertEquals("Be Here Now", foundAlbum.get().getName());
     }
 
     @Test

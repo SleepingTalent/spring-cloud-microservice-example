@@ -6,6 +6,7 @@ import com.noveria.musicrepository.controller.request.TrackRequest;
 import com.noveria.musicrepository.model.domain.Album;
 import com.noveria.musicrepository.model.domain.Artist;
 import com.noveria.musicrepository.model.domain.Track;
+import com.noveria.musicrepository.service.AlbumNotFoundException;
 import com.noveria.musicrepository.service.MusicRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,7 +59,7 @@ public class MusicRepositoryController {
 
     @RequestMapping(value = "/track", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Track addTrackToAlbum(@RequestBody TrackRequest trackRequest) {
+    public Track addTrackToAlbum(@RequestBody TrackRequest trackRequest) throws AlbumNotFoundException {
         logger.info("addTrackToAlbum(" + trackRequest + ") invoked");
         return musicRepositoryService.addTrackToAlbum(trackRequest);
     }

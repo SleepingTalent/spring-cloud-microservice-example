@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MusicRepositoryService {
@@ -67,18 +68,24 @@ public class MusicRepositoryService {
         return album;
     }
 
-    public Track addTrackToAlbum(TrackRequest trackRequest) {
+    public Track addTrackToAlbum(TrackRequest trackRequest) throws AlbumNotFoundException {
 
-        Album album = albumRepository.findOne(
+        Optional<Album> album = albumRepository.findById(
                 Long.valueOf(trackRequest.getAlbumId()));
 
-        Track track = new Track();
-        track.setName(trackRequest.getName());
-        track.setAlbum(album);
+        if(album.isPresent()) {
 
-        trackRepository.save(track);
+            Track track = new Track();
+            track.setName(trackRequest.getName());
+            track.setAlbum(album.get());
 
-        return track;
+            trackRepository.save(track);
+
+            return track;
+
+        }else {
+            throw new AlbumNotFoundException();
+        }
     }
 
 }

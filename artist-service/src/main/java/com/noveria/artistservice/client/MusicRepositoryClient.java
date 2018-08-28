@@ -2,16 +2,9 @@ package com.noveria.artistservice.client;
 
 import com.noveria.artistservice.controller.request.AlbumRequest;
 import com.noveria.artistservice.controller.request.ArtistRequest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 

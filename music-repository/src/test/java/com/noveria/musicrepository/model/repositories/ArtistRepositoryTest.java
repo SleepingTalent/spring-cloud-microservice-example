@@ -5,10 +5,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Optional;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @SpringBootTest(classes = Artist.class)
 public class ArtistRepositoryTest extends BaseRepositoryTest {
@@ -33,7 +35,9 @@ public class ArtistRepositoryTest extends BaseRepositoryTest {
 
     @Test
     public void getArtistById() {
-        assertEquals("Oasis", artistRepository.findOne(artist.getId()).getName());
+        Optional<Artist> foundArtist = artistRepository.findById(artist.getId());
+        assertTrue(foundArtist.isPresent());
+        assertEquals("Oasis", foundArtist.get().getName());
     }
 
     @Test

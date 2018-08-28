@@ -25,9 +25,7 @@ spring:
     name: eureka-server
   boot:
     admin:
-      url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:${server.port}
-        service-url: http://localhost:${server.port}
+        url: http://localhost:3000/admin-dashboard
   thymeleaf:
     enabled: false     # Disable Thymeleaf 

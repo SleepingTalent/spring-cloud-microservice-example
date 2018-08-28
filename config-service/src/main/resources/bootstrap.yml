@@ -32,10 +32,8 @@ spring:
          searchLocations: classpath:config
   boot:
     admin:
-      url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:${server.port}/config-service
-        service-url: http://localhost:${server.port}/config-service
+        url: http://localhost:3000/admin-dashboard
 logging:
   config: classpath:logback.xml
 

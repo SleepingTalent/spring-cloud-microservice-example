@@ -4,10 +4,6 @@ info:
     description: admin-dashboard
     version: @project.version@
 
-server:
-  port: 3000
-  contextPath: /admin-dashboard
-
 spring:
   application:
     name: admin-dashboard
