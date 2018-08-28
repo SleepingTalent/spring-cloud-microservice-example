@@ -4,14 +4,17 @@ info:
     description: Configuration Service
     version: @project.version@
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 server:
   port: 3200
   use-forward-headers: true
-  context-path: /config-service
-
-endpoints:
-  restart:
-    enabled: true
+  servlet:
+    context-path: /config-service
 
 spring:
   application:
@@ -46,7 +49,7 @@ eureka:
       defaultZone: http://localhost:3100/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
-    statusPageUrlPath: /config-service/info
-    healthCheckUrlPath: /config-service/health
+    statusPageUrlPath: /config-service/actuator/info
+    healthCheckUrlPath: /config-service/actuator/health
 
 

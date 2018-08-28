@@ -13,11 +13,15 @@ eureka:
     fetchRegistry: false
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 server:
   port: 3100   # HTTP (Tomcat) port
+  servlet:
+    context-path: /eureka
 
 # Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
 spring:
