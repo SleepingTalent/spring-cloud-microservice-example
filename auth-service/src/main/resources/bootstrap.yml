@@ -6,7 +6,8 @@ info:
 
 server:
   port: 3300
-  context-path: /auth
+  servlet:
+    context-path: /auth
 
 spring:
   application:
@@ -24,10 +25,8 @@ spring:
       fail-fast: true
   boot:
     admin:
-      url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:${server.port}/auth
-        service-url: http://localhost:${server.port}/auth
+        url: http://localhost:3000/admin-dashboard
 logging:
   config: classpath:logback.xml
 
@@ -40,7 +39,7 @@ eureka:
       defaultZone: http://localhost:3100/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
-    statusPageUrlPath: /auth/info
-    healthCheckUrlPath: /auth/health
+    statusPageUrlPath: /auth/actuator/info
+    healthCheckUrlPath: /auth/actuator/health
 
 ---

@@ -8,6 +8,7 @@ info:
 eureka:
   instance:
     hostname: localhost
+    ip-address: 127.0.0.1
   client:  # Not a client, don't register with yourself
     registerWithEureka: false
     fetchRegistry: false
