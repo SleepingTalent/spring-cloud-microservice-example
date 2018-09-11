@@ -43,13 +43,14 @@ logging:
 # Discovery Server Access
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
 #  2. Define URL of registration server (defaultZone)
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:3100/
-  instance:
-    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
-    statusPageUrlPath: /config-service/actuator/info
-    healthCheckUrlPath: /config-service/actuator/health
+      defaultZone: http://localhost:3100/eureka/
+#  instance:
+#    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+#    statusPageUrlPath: /config-service/actuator/info
+#    healthCheckUrlPath: /config-service/actuator/health
 
 
