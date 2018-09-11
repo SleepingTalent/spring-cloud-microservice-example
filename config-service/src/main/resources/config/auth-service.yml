@@ -1,18 +1,20 @@
 spring:
   application:
     name: auth-service
+  security:
+    user:
+      name: admin
+      password: password
 
 server:
-  contextPath: /auth
+  servlet:
+    context-path: /auth
 
-management:
-  security:
-    enabled: false
+#management:
+#  security:
+#    enabled: false
 
 security:
-  user:
-    name: admin
-    password: password
   oauth2:
     client:
       client-id: devApp

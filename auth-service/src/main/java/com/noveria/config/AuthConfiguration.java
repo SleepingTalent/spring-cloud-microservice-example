@@ -23,7 +23,7 @@ public class AuthConfiguration extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.anonymous().and()
-                .authorizeRequests().antMatchers( "/info","/health").permitAll()
+                .authorizeRequests().antMatchers( "/actuator/*").permitAll()
                 .anyRequest().authenticated();
     }
 

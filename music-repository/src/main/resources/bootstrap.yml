@@ -6,7 +6,8 @@ info:
 
 server:
   port: 2000
-  context-path: /music-repository
+  servlet:
+    context-path: /music-repository
 
 spring:
   application:
@@ -21,6 +22,12 @@ spring:
   zipkin:
     baseUrl: http://localhost:3400/
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 ---
 
 spring:
@@ -31,15 +38,10 @@ spring:
       fail-fast: true
   boot:
     admin:
-      url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:${server.port}/music-repository
-        service-url: http://localhost:${server.port}/music-repository
+        url: http://localhost:3000/admin-dashboard
 logging:
   config: classpath:logback.xml
-
-
-
 
 # Discovery Server Access
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
@@ -50,8 +52,8 @@ eureka:
       defaultZone: http://localhost:3100/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
-    statusPageUrlPath: /music-repository/info
-    healthCheckUrlPath: /music-repository/health
+    statusPageUrlPath: /music-repository/actuator/info
+    healthCheckUrlPath: /music-repository/actuator/health
 
 ---
 

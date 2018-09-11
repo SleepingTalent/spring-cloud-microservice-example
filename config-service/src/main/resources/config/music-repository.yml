@@ -1,6 +1,10 @@
 spring:
   application:
     name: music-repository
+  security:
+    user:
+      name: admin
+      password: password
   jpa:
     hibernate:
       ddl-auto: validate
@@ -8,16 +12,10 @@ spring:
   show-sql: true
 
 server:
-  contextPath: /music-repository
-
-management:
-  security:
-    enabled: false
+  servlet:
+    context-path: /music-repository
 
 security:
-  user:
-    name: admin
-    password: password
   oauth2:
     client:
       client-id: devApp

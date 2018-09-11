@@ -38,10 +38,8 @@ spring:
       fail-fast: true
   boot:
     admin:
-      url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:${server.port}/artist-service
-        service-url: http://localhost:${server.port}/artist-service
+        url: http://localhost:3000/admin-dashboard
 logging:
   config: classpath:logback.xml
 
@@ -55,8 +53,8 @@ eureka:
       defaultZone: http://localhost:3100/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
-    statusPageUrlPath: /artist-service/info
-    healthCheckUrlPath: /artist-service/health
+    statusPageUrlPath: /artist-service/actuator/info
+    healthCheckUrlPath: /artist-service/actuator/health
 
 ---
 
