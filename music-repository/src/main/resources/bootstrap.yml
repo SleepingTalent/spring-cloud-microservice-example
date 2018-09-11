@@ -49,7 +49,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:3100/eureka/
+      defaultZone: http://localhost:3100/eureka-service/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
     statusPageUrlPath: /music-repository/actuator/info

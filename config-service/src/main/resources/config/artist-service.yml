@@ -1,18 +1,16 @@
 spring:
   application:
     name: artist-service
+  security:
+    user:
+      name: admin
+      password: password
 
 server:
-  contextPath: /artist-service
-
-management:
-  security:
-    enabled: false
+  servlet:
+    context-path: /artist-service
 
 security:
-  user:
-    name: admin
-    password: password
   oauth2:
     client:
       client-id: devApp

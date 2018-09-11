@@ -26,6 +26,9 @@ public class WaitForHelper {
     @Value("${music.service.url}")
     String musicServiceUrl;
 
+    @Value("${artist.service.url}")
+    String artistServiceUrl;
+
     private static boolean serviceUnavailable = false;
 
     public void waitForMusicRepository() throws InterruptedException {
@@ -33,18 +36,22 @@ public class WaitForHelper {
     }
 
     public void waitForMusicService() throws InterruptedException {
-        waitForService(musicRepoUrl,"music-service");
+        waitForService(musicServiceUrl,"music-service");
+    }
+
+    public void waitForArtistService() throws InterruptedException {
+        waitForService(artistServiceUrl,"artist-service");
     }
 
     private void waitForService(String baseUrl, String name) throws InterruptedException {
-        WaitForService waitForEmailService = new WaitForService(baseUrl + "/info", restTemplate);
+        WaitForService waitForEmailService = new WaitForService(baseUrl + "/actuator/info", restTemplate);
         waitForEmailService.setMaxWaitTime(300000);
 
         if(serviceUnavailable) {
             fail(name+" unavailable");
         }
 
-        logger.info("waiting for {} at {}/info",name,baseUrl);
+        logger.info("waiting for {} at {}/actuator/info",name,baseUrl);
 
         try {
             waitForEmailService.performAssertion();

@@ -42,7 +42,7 @@ public class ArtistServiceIT {
 
     @Before
     public void before() throws InterruptedException {
-        waitForHelper.waitForMusicService();
+        waitForHelper.waitForArtistService();
     }
 
     @Test

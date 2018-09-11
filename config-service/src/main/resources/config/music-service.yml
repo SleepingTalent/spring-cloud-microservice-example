@@ -1,18 +1,16 @@
 spring:
   application:
     name: music-service
+  security:
+    user:
+      name: admin
+      password: password
 
 server:
-  contextPath: /music-service
-
-management:
-  security:
-    enabled: false
+  servlet:
+    context-path: /music-service
 
 security:
-  user:
-    name: admin
-    password: password
   oauth2:
     client:
       client-id: devApp

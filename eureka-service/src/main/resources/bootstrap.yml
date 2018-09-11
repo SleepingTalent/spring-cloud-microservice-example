@@ -1,6 +1,6 @@
 info:
   app:
-    name: eureka-server
+    name: eureka-service
     description: Discovery Service
 #    version: @project.version@
 
@@ -8,7 +8,6 @@ info:
 eureka:
   instance:
     hostname: localhost
-    ip-address: 127.0.0.1
   client:  # Not a client, don't register with yourself
     registerWithEureka: false
     fetchRegistry: false
@@ -22,12 +21,12 @@ management:
 server:
   port: 3100   # HTTP (Tomcat) port
   servlet:
-    context-path: /eureka
+    context-path: /eureka-service
 
 # Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
 spring:
   application:
-    name: eureka-server
+    name: eureka-service
   boot:
     admin:
       client:

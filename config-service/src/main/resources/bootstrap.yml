@@ -47,10 +47,10 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:3100/eureka/
-#  instance:
-#    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
-#    statusPageUrlPath: /config-service/actuator/info
-#    healthCheckUrlPath: /config-service/actuator/health
+      defaultZone: http://localhost:3100/eureka-service/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    statusPageUrlPath: /config-service/actuator/info
+    healthCheckUrlPath: /config-service/actuator/health
 
 

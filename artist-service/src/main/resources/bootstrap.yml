@@ -6,7 +6,8 @@ info:
 
 server:
   port: 2200
-  context-path: /artist-service
+  servlet:
+   context-path: /artist-service
 
 spring:
   application:
@@ -50,7 +51,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:3100/eureka/
+      defaultZone: http://localhost:3100/eureka-service/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
     statusPageUrlPath: /artist-service/actuator/info

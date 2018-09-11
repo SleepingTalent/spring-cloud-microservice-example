@@ -15,7 +15,7 @@ public class SecurityConfiguration extends ResourceServerConfigurerAdapter {
         http.anonymous().and()
                 .authorizeRequests().antMatchers("/v2/api-docs", "/configuration/ui",
                 "/swagger-resources", "/configuration/security", "/swagger-ui.html",
-                "/webjars/**", "/swagger-resources/configuration/ui", "/info", "/health").permitAll()
+                "/webjars/**", "/swagger-resources/configuration/ui", "/actuator/*").permitAll()
                 .anyRequest().authenticated();
     }
 
