@@ -22,11 +22,12 @@ spring:
   zipkin:
     baseUrl: http://localhost:3400/
 
-feign:
-  oauth2:
-    enabled: true
-  hystrix:
-    enabled: false
+#feign:
+#  oauth2:
+#
+#    enabled: true
+#  hystrix:
+#    enabled: false
 
 
 ---

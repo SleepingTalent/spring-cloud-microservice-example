@@ -61,8 +61,8 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-sleuth-zipkin</artifactId>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-sleuth-zipkin</artifactId>-->
         <!--</dependency>-->
 
         <dependency>
@@ -72,14 +72,8 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>io.jmnarloch</groupId>-->
-            <!--<artifactId>feign-oauth2-spring-cloud-starter</artifactId>-->
-            <!--<version>1.0.0</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>de.codecentric</groupId>
@@ -97,12 +91,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.6.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.netflix.feign</groupId>
-            <artifactId>feign-core</artifactId>
-            <version>8.16.2</version>
         </dependency>
 
     </dependencies>

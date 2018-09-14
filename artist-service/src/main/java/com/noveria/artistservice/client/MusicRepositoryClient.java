@@ -2,18 +2,42 @@ package com.noveria.artistservice.client;
 
 import com.noveria.artistservice.controller.request.AlbumRequest;
 import com.noveria.artistservice.controller.request.ArtistRequest;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@FeignClient(value = "music-repository")
-public interface MusicRepositoryClient {
+@Component
+public class MusicRepositoryClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "music-repository/album", consumes = "application/json")
-    List<AlbumRequest> findAllAlbums();
+    @Autowired
+    RestTemplate restTemplate;
 
-    @RequestMapping(method = RequestMethod.GET, value = "music-repository/artist", consumes = "application/json")
-    List<ArtistRequest> findAllArtists();
+    @Value("${music.repository.url}")
+    private String musicRepoUrl;
+
+    public List<AlbumRequest> findAllAlbums() {
+        ResponseEntity<List<AlbumRequest>> getAllAlbumsResponse =
+                restTemplate.exchange(musicRepoUrl + "/album", HttpMethod.GET, null,
+                        new ParameterizedTypeReference<List<AlbumRequest>>() {
+                        });
+
+        return getAllAlbumsResponse.getBody();
+
+    }
+
+    public List<ArtistRequest> findAllArtists() {
+        ResponseEntity<List<ArtistRequest>> getAllArtistsResponse =
+                restTemplate.exchange(musicRepoUrl + "/artist", HttpMethod.GET, null,
+                        new ParameterizedTypeReference<List<ArtistRequest>>() {
+                        });
+
+        return getAllArtistsResponse.getBody();
+    }
+
 }
