@@ -15,8 +15,6 @@ spring:
   profiles:
     active: local
   sleuth:
-    sampler:
-      percentage: 1.0
     web:
       skipPattern: (^cleanup.*)
   zipkin:
