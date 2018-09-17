@@ -38,12 +38,11 @@ spring:
       fail-fast: true
   boot:
     admin:
-      url: http://localhost:3000/admin-dashboard
       client:
-        management-url: http://localhost:${server.port}/
-        service-url: http://localhost:${server.port}/
+        url: http://localhost:3000/admin-dashboard
 logging:
   config: classpath:logback.xml
+
 
 # Discovery Server Access
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
@@ -51,10 +50,10 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:3100/eureka/
+      defaultZone: http://localhost:3100/eureka-service/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
-    statusPageUrlPath: /info
-    healthCheckUrlPath: /health
+    statusPageUrlPath: /music-service/actuator/info
+    healthCheckUrlPath: /music-service/actuator/health
 
 ---
